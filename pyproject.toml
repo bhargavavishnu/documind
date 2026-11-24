@@ -1,0 +1,37 @@
+[project]
+name = "documind"
+version = "0.1.0"
+description = "DocuMind — RAG-based document intelligence assistant with FAISS vector indexing, grounded citations, and Streamlit UI."
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "faiss-cpu>=1.9.0",
+    "fpdf2>=2.8.0",
+    "langchain>=0.3.0",
+    "langchain-community>=0.3.0",
+    "langchain-huggingface>=0.1.0",
+    "langchain-openai>=0.3.0",
+    "langchain-text-splitters>=0.3.0",
+    "pydantic>=2.9.0",
+    "pypdf>=5.0.0",
+    "python-dotenv>=1.0.1",
+    "rank-bm25>=0.2.2",
+    "sentence-transformers>=3.0.0",
+    "streamlit>=1.40.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.0",
+]
+
+[build-system]
+requires = ["setuptools>=69.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
